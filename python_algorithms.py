@@ -260,8 +260,7 @@ class Solution:
 # now create an instance of a class Solution and check any of the following functions with an example to see how they work.
 
 example = Solution()
-print(example.merge_sort(([5,6,4,3,7,8,1,2])))
-
+# print(example.merge_sort(([5,6,4,3,7,8,1,2])))
 
 
 
@@ -384,4 +383,83 @@ def mine_sweeper(bombs, num_rows, num_cols):
 
     return field
 
-# print(mine_sweeper([[0,1], [0, 0]], 3, 3))
+
+def most_frequent(nums):
+    # return the most frequently occurring element in the list
+
+    count = {}
+    max_item = None
+    max_count = 0
+
+    for num in nums:
+        if num in count:
+            count[num] += 1
+
+        else:
+            count[num] = 1
+
+        if count[num] > max_count:
+            max_count = count[num]
+            max_item = num
+
+    return max_item
+
+def unique(s):
+#     given a string, return True or False depending on uniqueness of all elements
+
+    s = s.replace(' ','')
+    return len(set(s)) == len(s)
+
+def unique_2(s):
+
+    s = s.replace(' ', '')
+    characters = set()
+
+    for letter in s:
+        if letter in characters:
+            return False
+        else:
+            characters.add(letter)
+
+    return True
+
+
+def non_repeating(s):
+
+    s = s.replace(' ', '').lower()
+
+    count = {}
+
+    for letter in s:
+        if letter in count:
+            count[letter] += 1
+
+        else:
+            count[letter] = 1
+
+
+    all_uniqies = []
+
+    result = sorted(count.items(), key = lambda x : x[1])
+
+    print(result)
+
+    for i in result:
+        if i[1] == 1:
+            all_uniqies.append(i[0])
+
+    return all_uniqies
+
+
+    # for item in count:
+    #     if count[item] == 1:
+    #         return item
+    #
+    # return None
+
+print(non_repeating('aabb'))
+
+
+
+
+
