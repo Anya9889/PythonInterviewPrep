@@ -242,7 +242,6 @@ class Solution:
 
 
 
-
     def largest(self, nums):
         # function that returns a largest sum of a contiguous subarray.
 
@@ -457,8 +456,18 @@ def non_repeating(s):
     #
     # return None
 
-print(non_repeating('aabb'))
+import re
 
+def word_in_text(word, text):
+    word = word.lower()
+    text = text.lower()
+    match = re.search(word, text)
+
+    if match:
+        return True
+    return False
+
+print(word_in_text('Anya', 'anya went for a walk'))
 
 
 
